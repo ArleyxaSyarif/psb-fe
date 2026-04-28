@@ -99,22 +99,37 @@ export default function RegisterFormData() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
+        // Validasi Javascript (Frontend)
+        if (form.nomor_hp.length < 10) {
+            alert("Nomor HP tidak valid. Minimal 10 angka!");
+            return;
+        }
+
         setLoading(true);
 
         try {
             const token = localStorage.getItem("token") || undefined;
             const res = await post("/students", form, token);
 
-            if (res.message) {
+            // Menangkap dan menampilkan error validasi dari Laravel (Backend)
+            if (res.errors) {
+                const errorMessages = Object.values(res.errors)
+                    .map((err: any) => err.join("\n"))
+                    .join("\n");
+                alert("Pendaftaran Gagal! Ada isian field yang tidak sesuai:\n\n" + errorMessages);
+                return;
+            }
+
+            if (res.message && !res.errors) {
                 alert("Data berhasil disimpan!");
                 setBlocked(true);
                 router.push("/verifikasi");
+            } else if (res.has_registered) {
+                setBlocked(true);
             } else {
                 alert("Gagal menyimpan data, periksa inputan Anda.");
-                console.log(res); // buat ngecek error validasi dari laravel
-            }
-            if (res.has_registered) {
-                setBlocked(true);
+                console.log(res); // buat ngecek log jika terjadi error tak terduga
             }
         } catch (error) {
             console.error(error);
