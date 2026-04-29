@@ -1,10 +1,56 @@
-import React from "react";
+
+"use client"
+
+import React, { useEffect, useState } from "react";
+
+import { get } from "@/lib/api";
+
+
 
 export default function HeroSection() {
+    const [heroImages, setHeroImages] = useState<string[]>([]);
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchHero = async () => {
+            try {
+                const res = await get("/hero");
+                if (res && res.images && res.images.length > 0) {
+                    setHeroImages(res.images);
+                }
+            } catch (error) {
+                console.error("Gagal mengambil data hero:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchHero();
+    }, []);
+
+    useEffect(() => {
+        if (heroImages.length > 1) {
+            const interval = setInterval(() => {
+                setCurrentIndex((prev) => (prev + 1) % heroImages.length);
+            }, 5000); // Ganti setiap 5 detik
+            return () => clearInterval(interval);
+        }
+    }, [heroImages]);
+
     return (
         <section className="relative min-h-[720px] flex items-center overflow-hidden">
             <div className="absolute inset-0 z-0">
-                <img alt="Modern school campus" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnfDYUT71dHfTXSplcSUoUxLPyOKvBLB6L7npkFKZK9NQGXczTLpYrQcfVmxZxoj3H_PPHiTAK8lcZefU9_k7XNPTl82XGg34fLZ7BKsXkeFN4U9cIIp_jRY8HKSzoS6pTA-OG_GHVWyQ4yykN1LKT3BO4M3TE_Evyy2ZuVMg6tZdvuD9F5vfWVjXbWFJr6fECCCNx0zAYI-NhqKsRpI1mvo4Ct2xkt4StNTlIzEU-sHzH_Gp3ItLQXLOVAP5G0JVV-nP3gOpekRIq" />
+                {heroImages.map((img, index) => (
+                    <img
+                        key={index}
+                        alt={`hero-${index}`}
+                        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                            index === currentIndex ? "opacity-100" : "opacity-0"
+                        }`}
+                        src={img}
+                    />
+                ))}
                 <div className="absolute inset-0 bg-gradient-to-r from-[#0b1c30]/80 via-[#0b1c30]/40 to-transparent"></div>
             </div>
             <div className="relative z-10 max-w-[1440px] mx-auto px-8 w-full">
