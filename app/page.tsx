@@ -2,22 +2,20 @@ import React from "react";
 import LandingNavbar from "./components/LandingNavbar";
 import HeroSection from "./components/HeroSection";
 import FactsSection from "./components/FactsSection";
-import AboutSection from "./components/AboutSection";
 import ProgramsSection from "./components/ProgramsSection";
-import NewsSection from "./components/NewsSection";
-import ContactSection from "./components/ContactSection";
 import LandingFooter from "./components/LandingFooter";
+import WhyChooseUs from "./components/WhyChooseSection";
 
 export default function Home() {
   return (
-    <div className="dark bg-surface-container-lowest text-on-background font-body selection:bg-secondary/30 min-h-screen">
+    <div className="text-on-surface bg-[#f8f9ff] font-['Inter',_sans-serif] selection:bg-orange-100 min-h-screen">
       <LandingNavbar />
-      <HeroSection />
-      <FactsSection />
-      <AboutSection />
-      <ProgramsSection />
-      <NewsSection />
-      <ContactSection />
+      <main className="pt-16">
+        <HeroSection />
+        <FactsSection />
+        <WhyChooseUs />
+        <ProgramsSection />
+      </main>
       <LandingFooter />
     </div>
   );

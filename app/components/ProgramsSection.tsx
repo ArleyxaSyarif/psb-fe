@@ -2,50 +2,63 @@ import React from "react";
 
 export default function ProgramsSection() {
     return (
-        <section className="py-32 bg-surface-dim overflow-hidden">
-            <div className="max-w-[1400px] mx-auto px-6 md:px-12">
-                <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
-                    <div className="max-w-2xl space-y-6">
-                        <div className="flex items-center gap-3">
-                            <span className="w-8 h-px bg-secondary"></span>
-                            <span className="text-secondary font-bold text-xs uppercase tracking-widest">Curriculum</span>
-                        </div>
-                        <h2 className="font-serif text-4xl md:text-6xl text-white">Spektrum <span className="italic font-normal">Pendidikan</span></h2>
-                        <p className="text-slate-400 text-lg">Eksplorasi jalur pendidikan yang dirancang secara presisi untuk mengasah bakat alami dan mempersiapkan kematangan profesional.</p>
+        <section className="py-20 bg-[#f8f9ff]">
+            <div className="max-w-[1440px] mx-auto px-8">
+                <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                    <div className="max-w-xl">
+                        <h2 className="text-4xl font-bold text-[#0b1c30] mb-4">Program Unggulan Kami</h2>
+                        <p className="text-slate-600">Kurikulum terintegrasi yang disesuaikan untuk setiap tahap perkembangan anak anda.</p>
                     </div>
-                    <button className="group text-secondary font-bold text-xs uppercase tracking-[0.2em] flex items-center gap-3 hover:text-white transition-all">
-                        Semua Program <span className="material-symbols-outlined transition-transform group-hover:translate-x-1">trending_flat</span>
-                    </button>
+                    <div className="flex gap-2">
+                        <button className="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center hover:bg-orange-50 hover:border-[#ff8c00]/30 text-slate-400 hover:text-[#ff8c00] transition-all">
+                            <span className="material-symbols-outlined">arrow_back</span>
+                        </button>
+                        <button className="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center hover:bg-orange-50 hover:border-[#ff8c00]/30 text-slate-400 hover:text-[#ff8c00] transition-all">
+                            <span className="material-symbols-outlined">arrow_forward</span>
+                        </button>
+                    </div>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-                    <div className="group relative aspect-[4/5] rounded-2xl overflow-hidden bg-slate-900 shadow-2xl cursor-pointer">
-                        <img className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-70 group-hover:opacity-40" data-alt="High-tech laboratory" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdULPeJ10ZMpv7ULizAkP25g3ptQS43fOe7I_5uWANQGqAcegfkZiE4VavZ58YQaxHw63OWeOUYbX5L0tSCZfcC4MJeTh4w7X7-yVSaRAAE2HdwsVs7T551Z8X0xRoqDbK7OtmqPD2dMH1xCGwAXAWqxxA5DbFTHHuIRpcKai82XHgB6CH1h12KzCBOlH_UCU2nCyDyBRLEVpQ9azq31nWjrO1pGC0hJgY_E0zcSYT6XgGb32nEtoVrIUjH7AFqLvtcVjtMeN2KndW" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
-                        <div className="absolute inset-0 border border-white/5 rounded-2xl group-hover:border-secondary/20 transition-colors pointer-events-none"></div>
-                        <div className="absolute bottom-0 p-10 w-full transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
-                            <span className="inline-block px-4 py-1.5 glass text-secondary rounded text-[9px] font-bold tracking-[0.3em] uppercase mb-6">Research &amp; Tech</span>
-                            <h3 className="font-serif text-3xl md:text-4xl text-white mb-4">Sciences</h3>
-                            <p className="text-slate-400 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500">Menembus batas kognisi melalui riset AI dan bio-teknologi mutakhir di laboratorium modern.</p>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {/* SD */}
+                    <div className="group bg-white rounded-xl overflow-hidden border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-xl transition-all duration-300">
+                        <div className="h-64 relative overflow-hidden">
+                            <img alt="Elementary" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCU9aoKu69LdXd8ztxIP1pL_HU35ObamadMoj0B54lrgfiXrMNcm-M_mT2JjemRlJtfiov6jzB_y521WN8T7q_O1b7W5KNdaa4QhH0Qz-385zMidG3VZKCRPeSYheej-ShEEB-cP9J-90DTORPRlPf3NjyPtgD7jCV8NFtVnBR4d3f6EkP5N_hHT5jF1zNCWUHFi8F4ji-NMFOlTUvbDL9yj3rW8DJfAlhDC9BMPkelVSAC6173CQ1pCi530T7Y0cC1mQNf9qO-Ezb8" />
+                            <div className="absolute top-4 right-4 bg-[#ff8c00] text-white px-4 py-1 rounded-full text-xs font-bold">SD</div>
+                        </div>
+                        <div className="p-8">
+                            <h3 className="text-2xl font-bold mb-3 text-[#ff8c00] transition-colors">Sekolah Dasar</h3>
+                            <p className="text-slate-500 mb-6 text-sm">Membangun fondasi karakter dan rasa ingin tahu melalui metode active learning.</p>
+                            <a className="inline-flex items-center text-[#ff8c00] font-bold hover:gap-2 transition-all text-sm" href="#">
+                                Selengkapnya <span className="material-symbols-outlined ml-1">chevron_right</span>
+                            </a>
                         </div>
                     </div>
-                    <div className="group relative aspect-[4/5] rounded-2xl overflow-hidden bg-slate-900 shadow-2xl cursor-pointer">
-                        <img className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-70 group-hover:opacity-40" data-alt="Creative art studio" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApC3Y1z-axJT60GLplH1pLG9Ap6GB5V4cUs6ve5cftPxai_sg1XMaMWdpVUXdwM2i4d1RjEhmwRKjia_EPEiFVXWc_RYrhx_eqNoVkt52Oj6aVXozZjdLfWGzNKFMB3hFO7sGwVZT35YIt_-aLyhakj3TlhewT0W_HROB-gfcHt8bkGR4TUtvRnTM0l3wmTnu5HIKwrggJeSKAO7Ygt8wa6faCtH22YMdpvmMGRCpH_A2SIEg2Yx8fEO_HmY7jEgHOyXIATzaAkkXC" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
-                        <div className="absolute inset-0 border border-white/5 rounded-2xl group-hover:border-secondary/20 transition-colors pointer-events-none"></div>
-                        <div className="absolute bottom-0 p-10 w-full transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
-                            <span className="inline-block px-4 py-1.5 glass text-secondary rounded text-[9px] font-bold tracking-[0.3em] uppercase mb-6">Creative Practice</span>
-                            <h3 className="font-serif text-3xl md:text-4xl text-white mb-4">Fine Arts</h3>
-                            <p className="text-slate-400 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500">Mengekspresikan visi artistik melalui sintesis media tradisional dan teknik digital kontemporer.</p>
+                    {/* SMP */}
+                    <div className="group bg-white rounded-xl overflow-hidden border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-xl transition-all duration-300">
+                        <div className="h-64 relative overflow-hidden">
+                            <img alt="SMP" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7c2XkDrP3orjtbkD6TSy9BosoKOlLXv7QJeJEyVNBvXgF-vWEfXxqENDK0NgjgJrXjo3rTMj2LdvBUZ2EVcV8ufvS0u2YG6pxdQFeEcY--MbT2msS3AasVXYEIl6e4JOsly5wFPa2qMeREl2I0zmfTAEzsOdONS5Vh07CwqGJgUfIzbCt7FccnvOaY6_lHPkgApEvbwPTGquOGxO_FM6yUUh1txDqY-UQb7o9vnKkuuuZJtQf4vuo2492h9cYXcUwOSstAlZ3J3ny" />
+                            <div className="absolute top-4 right-4 bg-[#ff8c00] text-white px-4 py-1 rounded-full text-xs font-bold">SMP</div>
+                        </div>
+                        <div className="p-8">
+                            <h3 className="text-2xl font-bold mb-3 text-[#ff8c00] transition-colors">Sekolah Menengah Pertama</h3>
+                            <p className="text-slate-500 mb-6 text-sm">Mengembangkan kemandirian dan pemikiran kritis untuk eksplorasi minat siswa.</p>
+                            <a className="inline-flex items-center text-[#ff8c00] font-bold hover:gap-2 transition-all text-sm" href="#">
+                                Selengkapnya <span className="material-symbols-outlined ml-1">chevron_right</span>
+                            </a>
                         </div>
                     </div>
-                    <div className="group relative aspect-[4/5] rounded-2xl overflow-hidden bg-slate-900 shadow-2xl cursor-pointer">
-                        <img className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-70 group-hover:opacity-40" data-alt="Modern athletic stadium" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8dXVAAoZHka7LjxRbfPQga08bMNECXmE6AQ2GrC-MP0mjlS-VPU8-AnIzqyklYulf7nK_JHTGOT08eGV5ae71dqV6Zo5t61qdytd9uwSMbr0U8d9USN8yPO0vkTZ1GvEtTMc0142BWGhg-EM01MWdA2J6kaG6sxsuDBRWpS_1cWpJUDMui7dkheGtMw1o-FdVWoOpTUP1naC1Cz_L5xI90fTByFda-BHKcYT0MiISGX-tQWqwtfa6-hSih5hWfYi0mXUWkxs0bFNl" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
-                        <div className="absolute inset-0 border border-white/5 rounded-2xl group-hover:border-secondary/20 transition-colors pointer-events-none"></div>
-                        <div className="absolute bottom-0 p-10 w-full transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
-                            <span className="inline-block px-4 py-1.5 glass text-secondary rounded text-[9px] font-bold tracking-[0.3em] uppercase mb-6">Elite Performance</span>
-                            <h3 className="font-serif text-3xl md:text-4xl text-white mb-4">Athletics</h3>
-                            <p className="text-slate-400 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500">Membangun disiplin dan ketangguhan fisik melalui fasilitas kelas dunia dan coaching berstandar internasional.</p>
+                    {/* SMA */}
+                    <div className="group bg-white rounded-xl overflow-hidden border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-xl transition-all duration-300">
+                        <div className="h-64 relative overflow-hidden">
+                            <img alt="SMA" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2jeCzndh2DUH-jeZIPwAgYwDLaeRXoiyLii4IgevsuKLDBjWVbnXrwbJg1CDCroW1rpa9eerdllTt-jWJBIogpj9-chUqGH-YXJw9dXFtIiYlOn2BuxtvmfhzjYMIPGiLo6Nl9-tQlYdR8y6shSZcgXwPhKDuEHw3FtpS4EYWfqygifC-JDPWJLw9SjZeF6Tn5KcwWmvIPz0S1URUCdhEZu38hKZOcopbCi1WpUzr9iykH7KNdZo6rTb4pqg79paNa06_KWhvy2dZ" />
+                            <div className="absolute top-4 right-4 bg-[#ff8c00] text-white px-4 py-1 rounded-full text-xs font-bold">SMA</div>
+                        </div>
+                        <div className="p-8">
+                            <h3 className="text-2xl font-bold mb-3 text-[#ff8c00] transition-colors">Sekolah Menengah Atas</h3>
+                            <p className="text-slate-500 mb-6 text-sm">Persiapan matang menuju pendidikan tinggi melalui jalur akademis dan vokasi.</p>
+                            <a className="inline-flex items-center text-[#ff8c00] font-bold hover:gap-2 transition-all text-sm" href="#">
+                                Selengkapnya <span className="material-symbols-outlined ml-1">chevron_right</span>
+                            </a>
                         </div>
                     </div>
                 </div>
